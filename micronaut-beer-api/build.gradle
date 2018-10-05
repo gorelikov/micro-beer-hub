@@ -28,6 +28,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.16.2'
     annotationProcessor "io.micronaut:inject-java"
     annotationProcessor "io.micronaut:validation"
+    implementation "io.micronaut:discovery-client"
     compile "io.micronaut:http-client"
     compile "io.micronaut:http-server-netty"
     compile /*implementation*/ "io.micronaut:inject" //https://stackoverflow.com/questions/52640785/micronaut-1-0-rc1-does-not-run-in-intellij
