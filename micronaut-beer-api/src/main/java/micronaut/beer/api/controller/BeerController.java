@@ -9,13 +9,13 @@ import micronaut.beer.api.entity.Order;
 
 import java.util.UUID;
 
-//@Slf4j
+@Slf4j
 @Controller("/beer")
 public class BeerController {
 
-    @Post("/")
+    @Post
     public HttpResponse index(@Body Order order) {
-//        log.debug("Order {} accepted", order);
+        log.debug("Order {} accepted", order);
         return HttpResponse.created(UUID.randomUUID().toString());
     }
 }
