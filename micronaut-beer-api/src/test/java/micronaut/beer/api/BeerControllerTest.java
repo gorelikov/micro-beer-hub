@@ -5,6 +5,7 @@ import io.micronaut.http.HttpRequest;
 import io.micronaut.http.HttpStatus;
 import io.micronaut.http.client.RxHttpClient;
 import io.micronaut.runtime.server.EmbeddedServer;
+import micronaut.beer.api.entity.Order;
 import org.junit.Test;
 
 
@@ -16,7 +17,7 @@ public class BeerControllerTest {
     public void testIndex() throws Exception {
         try (EmbeddedServer server = ApplicationContext.run(EmbeddedServer.class)) {
             try (RxHttpClient client = server.getApplicationContext().createBean(RxHttpClient.class, server.getURL())) {
-                assertEquals(HttpStatus.CREATED, client.toBlocking().exchange(HttpRequest.POST("/beer", "{}")).status());
+                assertEquals(HttpStatus.CREATED, client.toBlocking().exchange(HttpRequest.POST("/beer", Order.builder().bottles(199).type("IPA").build())).status());
             }
         }
     }
