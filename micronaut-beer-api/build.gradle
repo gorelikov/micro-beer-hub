@@ -1,0 +1,51 @@
+plugins {
+    id "io.spring.dependency-management" version "1.0.6.RELEASE"
+    id "com.github.johnrengelman.shadow" version "4.0.0"
+    id "net.ltgt.apt-eclipse" version "0.18"
+    id "net.ltgt.apt-idea" version "0.18"	
+}
+
+apply plugin:"application"
+apply plugin:"java"
+
+version "0.1"
+group "micronaut.beer.api"
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "https://jcenter.bintray.com" }
+}
+
+dependencyManagement {
+    imports {
+        mavenBom 'io.micronaut:bom:1.0.0.RC1'
+    }
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.2'
+    annotationProcessor 'org.projectlombok:lombok:1.16.2'
+    annotationProcessor "io.micronaut:inject-java"
+    annotationProcessor "io.micronaut:validation"
+    compile "io.micronaut:http-client"
+    compile "io.micronaut:http-server-netty"
+    compile /*implementation*/ "io.micronaut:inject" //https://stackoverflow.com/questions/52640785/micronaut-1-0-rc1-does-not-run-in-intellij
+    compile "io.micronaut:validation"
+    compile "io.micronaut:runtime"
+    compileOnly "io.micronaut:inject-java"
+    runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
+    testImplementation "junit:junit:4.12"
+    testImplementation "io.micronaut:inject-java"
+    testImplementation "org.hamcrest:hamcrest-all:1.3"
+}
+
+shadowJar {
+    mergeServiceFiles()
+}
+
+run.jvmArgs('-noverify', '-XX:TieredStopAtLevel=1')
+
+mainClassName = "micronaut.beer.api.Application"
+compileJava.options.compilerArgs += '-parameters'
+compileTestJava.options.compilerArgs += '-parameters'

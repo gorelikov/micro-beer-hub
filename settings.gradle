@@ -1,0 +1,4 @@
+
+rootProject.name = 'micro-beer-hub'
+include 'micronaut-beer-api'
+include 'spring-beer-api'

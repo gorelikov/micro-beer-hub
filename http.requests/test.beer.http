@@ -1,0 +1,15 @@
+# Create Technical User for marketplace api resource
+POST http://{{host}}/beer
+Content-Type: application/json
+
+{
+  "type": "beer",
+  "bottles": 6
+}
+
+> {%
+    client.test("Order some beer", function() {
+        client.assert(response.status === 201, "Response status is not 201");
+    });
+ %}
+###

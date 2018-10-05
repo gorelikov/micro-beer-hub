@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: micronaut.beer.api
+---
+testFramework: junit
+sourceLanguage: java
