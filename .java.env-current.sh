@@ -1,1 +1,1 @@
-./.java.env-1.sh
+.java.env-mem.sh

@@ -53,7 +53,7 @@ case "$COMMAND" in
     run_app $JAFU
     ;;
   attack)
-  ./vegeta/attack.step0.sh "http://localhost:$1/beer"
+  ./vegeta/attack.step0.sh "http://localhost:$2/beer"
   ;;
   *)
     echo "use command [mn|mngroovy|boot|spark|kofu|jafu|build|test|killall|runall|attack port]"

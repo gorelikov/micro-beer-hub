@@ -30,3 +30,5 @@ out/
 
 ## java flight recorder
 *.jfr
+
+load.txt
