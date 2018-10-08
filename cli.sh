@@ -43,6 +43,12 @@ case "$COMMAND" in
   killall)
     kill -9 $(ps aux | grep '[j]ava -jar -Dmicro.label' | awk '{printf $2 " "}')
     ;;
+  db)
+    docker-compose up
+    ;;
+  db_down)
+    docker-compose down
+    ;;
   runall)
     trap "./cli.sh killall" SIGINT
     run_app $MICRONAUT &
@@ -55,7 +61,10 @@ case "$COMMAND" in
   attack)
   ./vegeta/attack.step0.sh "http://localhost:$2/beer"
   ;;
+  attack_db)
+  ./vegeta/attack.step1.sh "http://localhost:$2/place"
+  ;;
   *)
-    echo "use command [mn|mngroovy|boot|spark|kofu|jafu|build|test|killall|runall|attack port]"
+    echo "use command [mn|mngroovy|boot|spark|kofu|jafu|build|test|killall|runall|attack port|db|db_down]"
   ;;
 esac

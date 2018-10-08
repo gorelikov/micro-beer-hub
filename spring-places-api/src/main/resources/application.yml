@@ -1,0 +1,8 @@
+spring:
+  application:
+    name:
+  data:
+    mongodb:
+      database: places
+server:
+  port: 8085
