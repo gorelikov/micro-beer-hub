@@ -1,0 +1,6 @@
+micronaut:
+    application:
+        name: micronaut-groovy-beer-api
+                
+    server:
+        port: 8083

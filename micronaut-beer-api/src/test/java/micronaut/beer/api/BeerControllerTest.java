@@ -17,7 +17,7 @@ public class BeerControllerTest {
     public void testIndex() throws Exception {
         try (EmbeddedServer server = ApplicationContext.run(EmbeddedServer.class)) {
             try (RxHttpClient client = server.getApplicationContext().createBean(RxHttpClient.class, server.getURL())) {
-                assertEquals(HttpStatus.CREATED, client.toBlocking().exchange(HttpRequest.POST("/beer", Order.builder().bottles(199).type("IPA").build())).status());
+                assertEquals(HttpStatus.CREATED, client.toBlocking().exchange(HttpRequest.POST("/beer", Order.builder().money(199).name("someone").build())).status());
             }
         }
     }

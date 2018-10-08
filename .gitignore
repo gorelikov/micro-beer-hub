@@ -1,5 +1,8 @@
 .gradle
 /build/
+/out/
+build/
+out/
 !gradle/wrapper/gradle-wrapper.jar
 
 ### STS ###
@@ -24,3 +27,6 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+
+## java flight recorder
+*.jfr

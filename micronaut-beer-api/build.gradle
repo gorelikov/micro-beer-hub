@@ -5,8 +5,8 @@ plugins {
     id "net.ltgt.apt-idea" version "0.18"
 }
 
-apply plugin:"application"
-apply plugin:"java"
+apply plugin: "application"
+apply plugin: "java"
 
 version "0.1"
 group "micronaut.beer.api"
@@ -24,15 +24,15 @@ dependencyManagement {
 }
 
 dependencies {
-    compileOnly 'org.projectlombok:lombok:1.18.2'
+    compile 'org.projectlombok:lombok:1.18.2'
     annotationProcessor 'org.projectlombok:lombok:1.18.2'
     annotationProcessor "io.micronaut:inject-java"
     annotationProcessor "io.micronaut:validation"
-    compile "io.micronaut:http-client"
-    compile "io.micronaut:http-server-netty"
+    implementation "io.micronaut:http-client"
+    implementation "io.micronaut:http-server-netty"
     compile /*implementation*/ "io.micronaut:inject" //https://stackoverflow.com/questions/52640785/micronaut-1-0-rc1-does-not-run-in-intellij
-    compile "io.micronaut:validation"
-    compile "io.micronaut:runtime"
+    implementation "io.micronaut:validation"
+    implementation "io.micronaut:runtime"
     compileOnly "io.micronaut:inject-java"
     runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
     testImplementation "junit:junit:4.12"
