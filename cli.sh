@@ -14,6 +14,9 @@ BOOT=spring-beer-api/build/libs/spring-beer-api-*.jar
 SPARK=spark-beer-api/build/libs/spark-beer-api-*-all.jar
 KOFU=kofu-beer-api/build/libs/kofu-beer-api-*.jar
 JAFU=jafu-beer-api/build/libs/jafu-beer-api-*.jar
+MICRONAUT_DB=micronaut-gorm-places-api/build/libs/micronaut-gorm-places-api-*-all.jar
+SPRING_DB=spring-places-api/build/libs/spring-places-api-*.jar
+SPARK_DB=spark-places-api/build/libs/spark-places-api-*-all.jar
 
 case "$COMMAND" in
   mn)
@@ -33,6 +36,15 @@ case "$COMMAND" in
     ;;
   jafu)
     run_app $JAFU
+    ;;
+  boot_db)
+    run_app $SPRING_DB
+    ;;
+  mn_db)
+    run_app $MICRONAUT_DB
+    ;;
+  spark_db)
+    MONGO_URI=mongodb://localhost:27017/places run_app $SPARK_DB
     ;;
   build)
     ./gradlew build -xtest
