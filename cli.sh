@@ -46,11 +46,21 @@ case "$COMMAND" in
   spark_db)
     MONGO_URI=mongodb://localhost:27017/places run_app $SPARK_DB
     ;;
+  cloud)
+    run_app $MICRONAUT &
+    run_app $MICRONAUT_GROOVY &
+    run_app $BOOT &
+    run_app $SPRING_DB &
+    run_app $MICRONAUT_DB &
+    ;;
   build)
     ./gradlew build -xtest
     ;;
   test)
     ./gradlew clean build
+    ;;
+  stopall)
+    kill -15 $(ps aux | grep '[j]ava -jar -Dmicro.label' | awk '{printf $2 " "}')
     ;;
   killall)
     kill -9 $(ps aux | grep '[j]ava -jar -Dmicro.label' | awk '{printf $2 " "}')

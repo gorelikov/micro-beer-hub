@@ -1,7 +1,7 @@
 ---
 micronaut:
     application:
-        name: micronaut-gorm-places-api
+        name: places-api
                 
     server:
         port: 8086
@@ -13,3 +13,9 @@ mongodb:
 grails:
     mongodb:
         databaseName: places
+
+eureka:
+    client:
+        registration:
+            enabled: true
+        defaultZone: "${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}"

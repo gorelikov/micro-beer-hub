@@ -1,6 +1,12 @@
 micronaut:
     application:
-        name: micronaut-groovy-beer-api
+        name: beer-api
                 
     server:
         port: 8083
+
+eureka:
+    client:
+        registration:
+            enabled: true
+        defaultZone: "${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}"

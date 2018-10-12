@@ -34,6 +34,7 @@ dependencies {
     implementation "io.micronaut:micronaut-validation"
     implementation "io.micronaut:micronaut-runtime"
     compileOnly "io.micronaut:micronaut-inject-java"
+    compile "io.micronaut:micronaut-discovery-client"
     runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
     testImplementation "junit:junit:4.12"
     testImplementation "io.micronaut:micronaut-inject-java"
