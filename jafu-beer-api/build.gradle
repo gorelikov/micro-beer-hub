@@ -33,6 +33,8 @@ dependencies {
     implementation 'org.springframework.fu:spring-boot-jafu:0.0.3.BUILD-SNAPSHOT'
     implementation 'org.springframework.fu:spring-boot-fuconfigure:0.0.3.BUILD-SNAPSHOT'
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.aspectj:aspectjweaver:1.9.1'
+    implementation 'com.jcraft:jzlib:1.1.3'
 
 
     compileOnly 'org.projectlombok:lombok:1.18.2'

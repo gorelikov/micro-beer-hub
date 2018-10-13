@@ -52,6 +52,16 @@ case "$COMMAND" in
     run_app $KOFU &
     run_app $JAFU
     ;;
+  graal_build)
+    ./jafu-beer-api/build_graal.sh
+    ./micronaut-beer-api/build_graal.sh
+    ;;
+  graal_jafu)
+    ./jafu-beer-api/run_graal.sh
+    ;;
+  graal_mn)
+    ./micronaut-beer-api/run_graal.sh
+    ;;
   attack)
   ./vegeta/attack.step0.sh "http://localhost:$2/beer"
   ;;

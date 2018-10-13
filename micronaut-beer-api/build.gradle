@@ -19,7 +19,7 @@ repositories {
 
 dependencyManagement {
     imports {
-        mavenBom 'io.micronaut:bom:1.0.0.RC1'
+        mavenBom 'io.micronaut:bom:1.0.0.RC2'
     }
 }
 
@@ -35,6 +35,8 @@ dependencies {
     implementation "io.micronaut:runtime"
     compileOnly "io.micronaut:inject-java"
     runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
+    runtime "io.micronaut:graal"
+    compileOnly "com.oracle.substratevm:svm:GraalVM-1.0.0-rc7"
     testImplementation "junit:junit:4.12"
     testImplementation "io.micronaut:inject-java"
     testImplementation "org.hamcrest:hamcrest-all:1.3"
