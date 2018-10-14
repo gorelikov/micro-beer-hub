@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Document
+@Document(collection = "places")
 @CompoundIndex(def = "{ averagePrice: 1, maxTableSize: 1 }", background = true)
 public class Place {
     @Id

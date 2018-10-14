@@ -4,6 +4,7 @@ import com.example.spring.beer.hub.entity.Place;
 import com.example.spring.beer.hub.repository.PlacesRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,5 +27,11 @@ public class PlacesController {
             @RequestParam("companySize") Integer companySize,
             @RequestParam("minPrice") Integer minPrice, @RequestParam("maxPrice") Integer maxPrice) {
         return placesRepository.findByMaxTableSizeGreaterThanAndAveragePriceBetween(companySize, minPrice, maxPrice);
+    }
+
+    @GetMapping(value = "{placeId}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    public Place findPlace(@PathVariable("placeId")String placeId) {
+        return placesRepository.findById(placeId).orElseGet(null);
     }
 }

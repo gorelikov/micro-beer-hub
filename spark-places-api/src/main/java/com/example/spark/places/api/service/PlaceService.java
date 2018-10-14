@@ -5,8 +5,10 @@ import com.example.spark.places.api.entity.Place;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import lombok.extern.slf4j.Slf4j;
+import org.bson.types.ObjectId;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +30,13 @@ public class PlaceService {
 
         FindIterable<Place> findIterable = placesCollection.find(criteria, Place.class).limit(MAX_RESULT);
         return convertToList(findIterable);
+    }
+
+    public Place findPlace(String id) {
+        BasicDBObject criteria = new BasicDBObject();
+        criteria.put("_id", new ObjectId(id));
+        FindIterable<Place> places = placesCollection.find(criteria, Place.class);
+        return places.iterator().tryNext();
     }
 
     private List<Place> convertToList(FindIterable<Place> findIterable) {

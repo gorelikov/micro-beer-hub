@@ -30,5 +30,8 @@ public class PlaceController {
             return placeService.findPlaces(companySize, minPrice, maxPrice);
         });
 
+        get("/place/:placeId", (req, res) ->
+                placeService.findPlace(req.params(":placeId")));
+
     }
 }
