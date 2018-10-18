@@ -11,9 +11,11 @@ import io.micronaut.http.annotation.QueryValue
 class BeerController {
 
     private final BarService barService
+    private final OfferService offerService
 
-    BeerController(BarService barService) {
+    BeerController(BarService barService, OfferService offerService) {
         this.barService = barService
+        this.offerService = offerService
     }
 
     @Post
@@ -24,5 +26,10 @@ class BeerController {
     @Get
     List<Bar> loadBars(@QueryValue('placeId') String placeId) {
         return barService.loadBars(placeId)
+    }
+
+    @Get("offers")
+    List<Offer> loadOffers() {
+        return offerService.loadOffers()
     }
 }

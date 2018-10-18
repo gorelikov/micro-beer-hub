@@ -35,4 +35,4 @@ echo '==================kofu===================' >> load.txt
 sleep 5
 echo '==================jafu===================' >> load.txt
 ./cli.sh attack 8080 >> load.txt
-./cli.sh killall
+./cli.sh killall\

@@ -4,6 +4,9 @@ source ./.java.env-current.sh
 
 COMMAND="${1: }"
 
+export MONGO_URI=mongodb://localhost:27017/places
+export HOST_NAME=`hostname`
+
 run_app() {
     java -jar -Dmicro.label $JAVA_OPTS $1
 }
@@ -65,11 +68,19 @@ case "$COMMAND" in
   killall)
     kill -9 $(ps aux | grep '[j]ava -jar -Dmicro.label' | awk '{printf $2 " "}')
     ;;
-  db)
+  env)
     docker-compose up
     ;;
-  db_down)
+  env_down)
     docker-compose down
+    ;;
+  demo)
+    run_app $MICRONAUT_GROOVY &
+    run_app $BOOT &
+    run_app $SPRING_DB &
+    run_app $MICRONAUT_DB &
+    run_app $SPARK_DB &
+    ./bar-tender/runpack.sh 4
     ;;
   runall)
     trap "./cli.sh killall" SIGINT

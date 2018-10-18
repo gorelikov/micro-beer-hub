@@ -4,6 +4,13 @@ micronaut:
                 
     server:
         port: 8083
+---
+kafka:
+    bootstrap:
+        servers: localhost:9092
+
+redis:
+    uri: redis://localhost:6379
 
 eureka:
     client:

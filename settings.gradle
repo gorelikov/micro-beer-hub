@@ -10,3 +10,5 @@ include 'kofu-beer-api'
 include 'spring-places-api'
 include 'micronaut-gorm-places-api'
 include 'spark-places-api'
+
+include 'bar-tender'

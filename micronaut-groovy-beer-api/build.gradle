@@ -28,6 +28,8 @@ dependencies {
     implementation "io.micronaut:micronaut-validation"
     compileOnly "io.micronaut:micronaut-inject-groovy"
     compile "io.micronaut:micronaut-discovery-client"
+    compile "io.micronaut.configuration:micronaut-kafka"
+    compile "io.micronaut.configuration:micronaut-redis-lettuce"
 //    runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
     compile 'org.slf4j:slf4j-simple:1.7.25'
     testImplementation "io.micronaut:micronaut-inject-groovy"
