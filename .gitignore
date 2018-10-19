@@ -2,6 +2,7 @@
 /build/
 /out/
 build/
+target/
 out/
 !gradle/wrapper/gradle-wrapper.jar
 

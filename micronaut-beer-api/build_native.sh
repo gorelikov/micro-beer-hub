@@ -9,7 +9,7 @@ mvn install:install-file -Dfile=/graalvm/jre/lib/svm/builder/svm.jar \
                            -Dversion=GraalVM-1.0.0-rc7 \
                            -Dpackaging=jar
 
-gradle assemble
+gradle clean assemble
 
 java -cp build/libs/*-all.jar io.micronaut.graal.reflect.GraalClassLoadingAnalyzer
 
