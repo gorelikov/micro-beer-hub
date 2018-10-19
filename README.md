@@ -2,6 +2,14 @@
 Micronaut VS Spring Boot
 
 ## Step 1
+### Description
+Step with simple api endpoints by:
+* SpringBoot
+* Micronaut(groovy/java)
+* Spring fu(java/kotlin)
+* Spark
+### branch
+`try-api`
 ### build
 `./cli.sh build` \
 ### and run
