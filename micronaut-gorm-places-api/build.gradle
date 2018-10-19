@@ -17,20 +17,20 @@ repositories {
 
 dependencyManagement {
     imports {
-        mavenBom 'io.micronaut:bom:1.0.0.RC1'
+        mavenBom 'io.micronaut:micronaut-bom:1.0.0.RC3'
     }
 }
 
 dependencies {
-    implementation "io.micronaut.configuration:mongo-gorm"
-    implementation "io.micronaut:http-client"
-    implementation "io.micronaut:http-server-netty"
-    implementation "io.micronaut:runtime-groovy"
-    implementation "io.micronaut:validation"
-    implementation "io.micronaut.configuration:mongo-reactive"
-    compile "io.micronaut:inject-groovy"
+    implementation "io.micronaut.configuration:micronaut-mongo-gorm"
+    implementation "io.micronaut:micronaut-http-client"
+    implementation "io.micronaut:micronaut-http-server-netty"
+    implementation "io.micronaut:micronaut-runtime-groovy"
+    implementation "io.micronaut:micronaut-validation"
+    implementation "io.micronaut.configuration:micronaut-mongo-reactive"
+    compile "io.micronaut:micronaut-inject-groovy"
     runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
-    testImplementation "io.micronaut:inject-groovy"
+    testImplementation "io.micronaut:micronaut-inject-groovy"
     testImplementation "de.flapdoodle.embed:de.flapdoodle.embed.mongo:2.0.1"
     testImplementation("org.spockframework:spock-core:1.2-groovy-2.4") {
         exclude group: "org.codehaus.groovy", module: "groovy-all"
