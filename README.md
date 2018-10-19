@@ -20,6 +20,8 @@ If you are using Intellij Idea you can simple call any of the apps by scripts in
 If you want to simply load apps you could use `./cli attack PORT_TO_ATTACK`
 
 ## Step 1.1 (GraalVM)
+### Description
+Step with Spring Fu and Micronaut simple API projects built by GraalVM
 ### branch 
 `try-graal`
 ### build
