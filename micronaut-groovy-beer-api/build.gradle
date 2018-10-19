@@ -17,19 +17,19 @@ repositories {
 
 dependencyManagement {
     imports {
-        mavenBom 'io.micronaut:bom:1.0.0.RC1'
+        mavenBom 'io.micronaut:micronaut-bom:1.0.0.RC3'
     }
 }
 
 dependencies {
-    implementation "io.micronaut:http-client"
-    implementation "io.micronaut:http-server-netty"
-    implementation "io.micronaut:runtime-groovy"
-    implementation "io.micronaut:validation"
-    compileOnly "io.micronaut:inject-groovy"
+    implementation "io.micronaut:micronaut-http-client"
+    implementation "io.micronaut:micronaut-http-server-netty"
+    implementation "io.micronaut:micronaut-runtime-groovy"
+    implementation "io.micronaut:micronaut-validation"
+    compileOnly "io.micronaut:micronaut-inject-groovy"
 //    runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
     compile 'org.slf4j:slf4j-simple:1.7.25'
-    testImplementation "io.micronaut:inject-groovy"
+    testImplementation "io.micronaut:micronaut-inject-groovy"
     testImplementation("org.spockframework:spock-core:1.2-groovy-2.4") {
         exclude group: "org.codehaus.groovy", module: "groovy-all"
     }
