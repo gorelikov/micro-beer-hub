@@ -20,3 +20,30 @@ If you are using Intellij Idea you can simple call any of the apps by scripts in
 If you want to simply load apps you could use `./cli attack PORT_TO_ATTACK`
 
 
+## Step 1.1 (GraalVM)
+### Description
+Step with Spring Fu and Micronaut simple API projects built by GraalVM
+### branch 
+`try-graal`
+### build
+`./cli.sh graal_build` \
+and make make a cup of coffer cause you need to wait for a while
+
+### and run
+`./cli.sh graal_mn` to run micronaut built by GraalVM \
+`./cli.sh graal_jafu` to run spring fu (Java version) built by GraalVM
+
+
+## Step 3
+### Description
+Step with Mongo connectors for:
+* SpringBoot(spring-data)
+* Micronaut (GORM - Grails)
+* Spark (default mongo client)
+### branch 
+`try-db`
+### build
+`./cli.sh build` \
+
+### and run
+`./cli.sh [boot_db, spark_db, mn_db]`
