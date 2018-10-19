@@ -56,7 +56,26 @@ Step with Cloud (Eureka) dependencies for:
 ### branch 
 `try-cloud`
 ### build
+`./cli.sh build`
+### and run
+`./cli.sh [boot,mn,mngroovy,boot_db, mn_db]`
+
+## Step 5
+### Description
+Step with Kafka and Redis dependencies for:
+* SpringBoot
+* Micronaut
+### branch 
+`try-mq` \
+Yeah, I know that kafka is not actually MQ %)
+### build
 `./cli.sh build` \
 
 ### and run
-`./cli.sh [boot,mn,mngroovy,boot_db, mn_db]`
+`./cli.sh env` to run environment (mongo, kafka, redis)
+`spring cloud eureka` to run Eureka
+`./cli.sh demo` to run all apps
+
+Now you can try it by
+`curl -XGET http://localhost:8083/iwantbeer/someone/1500` - to send the order
+`curl -XGET http://localhost:8083/buster` - to check the buster offers
