@@ -47,3 +47,16 @@ Step with Mongo connectors for:
 
 ### and run
 `./cli.sh [boot_db, spark_db, mn_db]`
+
+## Step 4
+### Description
+Step with Cloud (Eureka) dependencies for:
+* SpringBoot
+* Micronaut
+### branch 
+`try-cloud`
+### build
+`./cli.sh build` \
+
+### and run
+`./cli.sh [boot,mn,mngroovy,boot_db, mn_db]`
