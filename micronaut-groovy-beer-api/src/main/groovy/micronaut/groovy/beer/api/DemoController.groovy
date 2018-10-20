@@ -21,6 +21,9 @@ class DemoController {
                             String money) {
         try {
             int moneyValue = Integer.parseInt(money)
+            if(moneyValue < 1 || moneyValue > 5000) {
+
+            }
             barService.makeOrder(new Order(
                     name: name,
                     money: moneyValue
@@ -28,8 +31,9 @@ class DemoController {
             return HttpResponse.ok('Wait for it buddy. :)' +
                     '\n We will find a company and a place for saturday\' s evening.' +
                     '\n Look on the big screen')
-        } catch (NumberFormatException e) {
-            return HttpResponse.ok('Hey! Do you wanna drink or not?')
+        } catch (Exception e) {
+            return HttpResponse.ok('Hey! Do you wanna drink or not?\n' +
+                    ' Do not use strings, negative numbers or numbers bigger than 5000, please')
         }
 
     }

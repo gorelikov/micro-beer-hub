@@ -23,6 +23,9 @@ public class DemoController {
                                      @PathVariable("money") String money) {
         try {
             int moneyValue = Integer.parseInt(money);
+            if(moneyValue < 1 || moneyValue > 5000) {
+                throw new BeerException();
+            }
             barService.makeOrder(Order.builder()
                     .money(moneyValue)
                     .name(name)
@@ -30,8 +33,9 @@ public class DemoController {
             return ResponseEntity.ok("Wait for it buddy. :)" +
                     " \nWe will find a company and a place for saturday's evening." +
                     " \nLook on the big screen");
-        } catch (NumberFormatException e) {
-            return ResponseEntity.ok("Hey! Do you wanna drink or not?");
+        } catch (Exception e) {
+            return ResponseEntity.ok("Hey! Do you wanna drink or not?\n" +
+                    " Do not use strings, negative numbers or numbers bigger than 5000, please");
         }
 
     }
