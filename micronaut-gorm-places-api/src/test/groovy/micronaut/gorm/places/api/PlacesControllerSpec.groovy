@@ -17,7 +17,7 @@ class PlacesControllerSpec extends Specification {
 
     void "test index"() {
         given:
-        HttpResponse response = client.toBlocking().exchange("/places")
+        HttpResponse response = client.toBlocking().exchange("/place")
 
         expect:
         response.status == HttpStatus.OK
