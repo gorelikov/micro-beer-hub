@@ -1,4 +1,14 @@
 
 rootProject.name = 'micro-beer-hub'
 include 'micronaut-beer-api'
+include 'micronaut-groovy-beer-api'
 include 'spring-beer-api'
+include 'spark-beer-api'
+include 'jafu-beer-api'
+include 'kofu-beer-api'
+
+include 'spring-places-api'
+include 'micronaut-gorm-places-api'
+include 'spark-places-api'
+
+include 'bar-tender'

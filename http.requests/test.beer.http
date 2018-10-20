@@ -3,8 +3,8 @@ POST http://{{host}}/beer
 Content-Type: application/json
 
 {
-  "type": "beer",
-  "bottles": 6
+  "name": "someone",
+  "money": 1500
 }
 
 > {%

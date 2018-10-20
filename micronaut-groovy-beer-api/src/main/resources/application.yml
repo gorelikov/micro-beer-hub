@@ -1,0 +1,19 @@
+micronaut:
+    application:
+        name: beer-api
+                
+    server:
+        port: 8083
+---
+kafka:
+    bootstrap:
+        servers: localhost:9092
+
+redis:
+    uri: redis://localhost:6379
+
+eureka:
+    client:
+        registration:
+            enabled: true
+        defaultZone: "${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}"

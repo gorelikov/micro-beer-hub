@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: micronaut.groovy.beer.api
+---
+testFramework: spock
+sourceLanguage: groovy

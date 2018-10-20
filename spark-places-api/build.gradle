@@ -1,0 +1,36 @@
+plugins {
+    id "com.github.johnrengelman.shadow" version "4.0.0"
+    id "net.ltgt.apt-idea" version "0.18"
+}
+
+apply plugin: "application"
+apply plugin: "java"
+
+version "0.1"
+group "spark.beer.api"
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "https://jcenter.bintray.com" }
+}
+
+
+dependencies {
+    compile 'org.projectlombok:lombok:1.18.2'
+    annotationProcessor 'org.projectlombok:lombok:1.18.2'
+    compile 'com.google.code.gson:gson:2.8.5'
+    compile "com.sparkjava:spark-core:2.7.2"
+    compile 'org.slf4j:slf4j-simple:1.7.25'
+    compile 'org.mongodb:mongo-java-driver:3.8.2'
+}
+
+shadowJar {
+    mergeServiceFiles()
+}
+
+run.jvmArgs('-noverify', '-XX:TieredStopAtLevel=1')
+
+mainClassName = "com.example.spark.places.api.SparkPlaceApplication"
+compileJava.options.compilerArgs += '-parameters'
+compileTestJava.options.compilerArgs += '-parameters'

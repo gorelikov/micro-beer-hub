@@ -1,8 +1,7 @@
 micronaut:
     application:
-        name: micronaut-beer-api
+        name: beer-api
                 
-#Uncomment to set server port
     server:
         port: 8082
 

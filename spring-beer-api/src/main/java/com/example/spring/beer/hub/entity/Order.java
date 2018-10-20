@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Order {
-    private String type;
-    private Integer bottles;
+    private String name;
+    private Integer money;
 }

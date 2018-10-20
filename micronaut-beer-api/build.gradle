@@ -2,11 +2,11 @@ plugins {
     id "io.spring.dependency-management" version "1.0.6.RELEASE"
     id "com.github.johnrengelman.shadow" version "4.0.0"
     id "net.ltgt.apt-eclipse" version "0.18"
-    id "net.ltgt.apt-idea" version "0.18"	
+    id "net.ltgt.apt-idea" version "0.18"
 }
 
-apply plugin:"application"
-apply plugin:"java"
+apply plugin: "application"
+apply plugin: "java"
 
 version "0.1"
 group "micronaut.beer.api"
@@ -19,25 +19,25 @@ repositories {
 
 dependencyManagement {
     imports {
-        mavenBom 'io.micronaut:bom:1.0.0.RC1'
+        mavenBom 'io.micronaut:micronaut-bom:1.0.0.RC3'
     }
 }
 
 dependencies {
-    compileOnly 'org.projectlombok:lombok:1.18.2'
-    annotationProcessor 'org.projectlombok:lombok:1.16.2'
-    annotationProcessor "io.micronaut:inject-java"
-    annotationProcessor "io.micronaut:validation"
-    implementation "io.micronaut:discovery-client"
-    compile "io.micronaut:http-client"
-    compile "io.micronaut:http-server-netty"
-    compile /*implementation*/ "io.micronaut:inject" //https://stackoverflow.com/questions/52640785/micronaut-1-0-rc1-does-not-run-in-intellij
-    compile "io.micronaut:validation"
-    compile "io.micronaut:runtime"
-    compileOnly "io.micronaut:inject-java"
+    compile 'org.projectlombok:lombok:1.18.2'
+    annotationProcessor 'org.projectlombok:lombok:1.18.2'
+    annotationProcessor "io.micronaut:micronaut-inject-java"
+    annotationProcessor "io.micronaut:micronaut-validation"
+    implementation "io.micronaut:micronaut-http-client"
+    implementation "io.micronaut:micronaut-http-server-netty"
+    compile /*implementation*/ "io.micronaut:micronaut-inject" //https://stackoverflow.com/questions/52640785/micronaut-1-0-rc1-does-not-run-in-intellij
+    implementation "io.micronaut:micronaut-validation"
+    implementation "io.micronaut:micronaut-runtime"
+    compileOnly "io.micronaut:micronaut-inject-java"
+    compile "io.micronaut:micronaut-discovery-client"
     runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
     testImplementation "junit:junit:4.12"
-    testImplementation "io.micronaut:inject-java"
+    testImplementation "io.micronaut:micronaut-inject-java"
     testImplementation "org.hamcrest:hamcrest-all:1.3"
 }
 
