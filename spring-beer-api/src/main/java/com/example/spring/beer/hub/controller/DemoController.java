@@ -35,9 +35,14 @@ public class DemoController {
                     " \nLook on the big screen");
         } catch (Exception e) {
             return ResponseEntity.ok("Hey! Do you wanna drink or not?\n" +
-                    " Do not use strings, negative numbers or numbers bigger than 5000, please");
+                    " Do not use strings, negative numbers or numbers bigger than 5000 for name, please");
         }
 
+    }
+
+    @GetMapping("/iwantbeer")
+    public ResponseEntity helpMe() {
+        return ResponseEntity.ok("Please go to http://buster.igg.biz/iwantbeer/{NICKNAME}/{MONEY_AMOUNT}");
     }
 
     @GetMapping("buster")
