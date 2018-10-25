@@ -1,6 +1,14 @@
 # Demo project for Joker 2018 talk about microframeworks
 Micronaut VS Spring Boot
 
+## Authors
+[Kirill Tolkachev](https://github.com/lavcraft) [@tolkv](https://twitter.com/tolkv) \
+and \
+[Maxim Gorelikov](https://github.com/gorelikov) [@gorelikoff](https://twitter.com/gorelikoff)
+
+## Slides
+[https://speakerdeck.com/lavcraft/spring-boot-vs-micronaut-smallest-framework-battle-number-jokerconf](https://speakerdeck.com/lavcraft/spring-boot-vs-micronaut-smallest-framework-battle-number-jokerconf)
+
 ## Step 1
 ### Description
 Step with simple api endpoints by:
@@ -11,12 +19,12 @@ Step with simple api endpoints by:
 ### branch
 `try-api`
 ### build
-`./cli.sh build` \
+`./cli.sh build` 
 ### and run
 `MEM=256 ./cli.sh runall`
 or you could use any of command that presented in cli.sh, but do not forget about `MEM` variable
 ### try it
-If you are using Intellij Idea you can simple call any of the apps by scripts in `http.requests` folder \
+If you are using Intellij Idea you can simply call any of the apps by scripts in `http.requests` folder \
 If you want to simply load apps you could use `./cli attack PORT_TO_ATTACK`
 
 
@@ -43,7 +51,7 @@ Step with Mongo connectors for:
 ### branch 
 `try-db`
 ### build
-`./cli.sh build` \
+`./cli.sh build`
 
 ### and run
 `./cli.sh [boot_db, spark_db, mn_db]`
@@ -67,9 +75,9 @@ Step with Kafka and Redis dependencies for:
 * Micronaut
 ### branch 
 `try-mq` \
-Yeah, I know that kafka is not actually MQ %)
+Yeah, I know that Kafka is not actually MQ. At first it was Rabbit, but it is not supported at the moment %)
 ### build
-`./cli.sh build` \
+`./cli.sh build` 
 
 ### and run
 `./cli.sh env` to run environment (mongo, kafka, redis)
